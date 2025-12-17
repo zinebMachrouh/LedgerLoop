@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { accountApi } from '../api/endpoints/account';
-import { useNotification } from './useNotification';
+import { useNotification } from './useNotification.tsx';
 import { validateAmount } from '../utils/validators';
 import { Transaction } from '@/types/transaction.types';
 import { AccountStatement } from '@/types/account.types';
