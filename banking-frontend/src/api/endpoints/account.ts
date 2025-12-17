@@ -1,5 +1,6 @@
+import { AccountStatement, TransactionRequest } from '@/types/account.types';
 import { apiClient } from '../client';
-import { AccountStatement, TransactionRequest, TransactionResponse } from '../../types';
+import { TransactionResponse } from '@/types/api.types';
 
 const ENDPOINTS = {
   DEPOSIT: '/accounts/deposit',
