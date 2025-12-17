@@ -17,5 +17,4 @@ public class TransactionRequest {
     @Positive(message = "Amount must be greater than zero")
     private Integer amount;
 
-    private String accountId;
 }

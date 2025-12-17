@@ -1,4 +1,4 @@
-# 🏦 Skypay Banking Service
+# 🏦 LedgerLoop : Banking Service
 
 A modern, full-stack banking application built with **Spring Boot** backend and **React TypeScript** frontend. This project implements core banking operations including deposits, withdrawals, and transaction history with a clean, professional UI.
 
