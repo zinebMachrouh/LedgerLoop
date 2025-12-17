@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
 import { Card } from '../ui/Card';
-import { useNotification } from '@/hooks/useNotification';
 
 interface TransactionFormProps {
   onDeposit: (amount: number, date?: string) => Promise<void>;
@@ -24,21 +23,15 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
   };
 
   const [amount, setAmount] = useState('');
-  const [date, setDate] = useState(getLocalToday());
-  const todayStr = getLocalToday();
-  const { showNotification } = useNotification();
 
   const handleSubmit = async (type: 'deposit' | 'withdraw') => {
     const numAmount = parseInt(amount);
-    if (date > todayStr) {
-      showNotification('error', 'Date cannot be in the future');
-      return;
-    }
+    
 
     if (type === 'deposit') {
-      await onDeposit(numAmount, date);
+      await onDeposit(numAmount);
     } else {
-      await onWithdraw(numAmount, date);
+      await onWithdraw(numAmount);
     }
     setAmount('');
   };
@@ -56,22 +49,6 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
         disabled={loading}
       />
 
-      <Input
-        label="Date"
-        type="date"
-        value={date}
-        max={todayStr}
-        onChange={(e) => {
-          const selected = e.target.value;
-          if (selected > todayStr) {
-            showNotification('error', 'Date cannot be in the future');
-            setDate(todayStr);
-            return;
-          }
-          setDate(selected);
-        }}
-        disabled={loading}
-      />
 
       <div className="button-group">
         <Button
