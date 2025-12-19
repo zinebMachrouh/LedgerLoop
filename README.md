@@ -122,14 +122,14 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/skypay-banking.git
-cd skypay-banking
+git clone https://github.com/zinebMachrouh/LedgerLoop.git
+cd LedgerLoop
 ```
 
 ### 2. Backend Setup
 
 ```bash
-cd backend
+cd banking-backend
 
 # Install dependencies
 mvn clean install
@@ -155,7 +155,7 @@ echo "VITE_API_BASE_URL=http://localhost:8080/api" > .env
 ### Start Backend (Terminal 1)
 
 ```bash
-cd backend
+cd banking-backend
 mvn spring-boot:run
 ```
 
@@ -164,7 +164,7 @@ The backend will start on **http://localhost:8080**
 ### Start Frontend (Terminal 2)
 
 ```bash
-cd frontend
+cd banking-frontend
 npm run dev
 ```
 
